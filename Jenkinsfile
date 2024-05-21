@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the source code from GitHub
-                git url: 'https://github.com/MoizShamsheer047/tocs.git', branch: 'main'
+                git url: 'https://github.com/MoizShamsheer047/tocs.git', branch: 'master'
             }
         }
         stage('Run Python Script') {

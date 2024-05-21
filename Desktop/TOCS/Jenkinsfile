@@ -1,19 +1,17 @@
 pipeline {
     agent any
+
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                echo 'Application build stage...'
+                // Checkout the source code from GitHub
+                git url: 'https://github.com/MoizShamsheer047/tocs.git', branch: 'main'
             }
         }
-        stage('Test') {
+        stage('Run Python Script') {
             steps {
-                echo 'Application test stage'
-            }
-        }
-        stage('Run') {
-            steps {
-                echo 'Application run stage'
+                // Execute the Python script
+                sh 'python3 script.py'
             }
         }
     }

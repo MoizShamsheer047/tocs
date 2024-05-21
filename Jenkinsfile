@@ -2,16 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Checkout SCM') {
             steps {
-                // Checkout the source code from GitHub
-                git url: 'https://github.com/MoizShamsheer047/tocs.git', branch: 'master'
+                checkout scm
+            }
+        }
+        stage('List Directory Contents') {
+            steps {
+                sh 'ls -la'
             }
         }
         stage('Run Python Script') {
             steps {
-                // Execute the Python script
-                sh 'python3 script.py'
+                sh 'python3 script.py'  // Update this path if your script is in a subdirectory
             }
         }
     }

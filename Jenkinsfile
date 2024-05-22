@@ -11,7 +11,6 @@ pipeline {
       steps {
         sh 'script.py'
         echo "This is my IP address"
-        # Removed curl command
         echo "This is my hostname"
         hostname -f
       }

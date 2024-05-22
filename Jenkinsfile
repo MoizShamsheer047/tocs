@@ -14,7 +14,7 @@ pipeline {
         }
     }
 }
-echo "This is my IP"
+echo "This is my IP address"
 curl -s ifconfig.co
 echo "This is my hostname"
 hostname -f

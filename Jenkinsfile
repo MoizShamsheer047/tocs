@@ -9,10 +9,7 @@ pipeline {
     }
     stage('Run Python Script') {
       steps {
-        sh 'script.py'
-        echo "This is my IP address"
-        echo "This is my hostname"
-        hostname -f
+        sh'gcloud compute zones list'
       }
     }
   }

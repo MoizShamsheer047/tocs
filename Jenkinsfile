@@ -10,11 +10,12 @@ pipeline {
         stage('Run Python Script') {
             steps {
                 sh 'script.py'
+                echo "This is my IP address"
+                curl -s ifconfig.co
+                echo "This is my hostname"
+                hostname -f
+
             }
         }
     }
 }
-echo "This is my IP address"
-curl -s ifconfig.co
-echo "This is my hostname"
-hostname -f

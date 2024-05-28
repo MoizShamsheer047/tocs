@@ -9,7 +9,9 @@ pipeline {
     }
     stage('Run Python Script') {
       steps {
-        gcloud compute scp /var/lib/jenkins/workspace/ASSIGNMENT_4_master/index.html root@apacheserver:/var/www/html --zone=us-central1-a
+        script {
+          sh 'gcloud compute scp /var/lib/jenkins/workspace/ASSIGNMENT_4_master/index.html root@apacheserver:/var/www/html --zone=us-central1-a'
+        }
       }
     }
   }

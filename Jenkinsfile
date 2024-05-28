@@ -13,7 +13,7 @@ pipeline {
           // Ensure the target directory exists
           sh '''
             gcloud compute ssh root@apacheserver --zone=us-west4-b --command="mkdir -p /var/www/html"
-            gcloud compute scp /var/lib/jenkins/workspace/ASSIGNMENT_4_master/index.html root@apacheserver:/var/www/html --zone=us-westb-b
+            gcloud compute scp /var/lib/jenkins/workspace/ASSIGNMENT_4_master/index.html root@jenkinsserver:/var/www/html --zone=us-westb-b
           '''
         }
       }
